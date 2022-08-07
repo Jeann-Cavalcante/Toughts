@@ -8,6 +8,17 @@ const app = express();
 
 const conn = require("./db/conn");
 
+// models
+const Tought = require("./models/Tought");
+const User = require("./models/User");
+
+// import routes
+const toughtsRoutes = require("./routes/toughtsRoutes");
+
+// importe controller apenas para acessar a '/'
+const ToughtsController = require("./controllers/ToughtsController");
+
+// Template engine
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 
@@ -34,6 +45,25 @@ app.use(
     },
   })
 );
+
+// Flash messages
+app.use(flash());
+
+// public path para usar com css
+app.use(express.static("public"));
+
+// set session to res
+app.use((req, res, next) => {
+  if (req.session.userid) {
+    res.locals.session = req.session;
+  }
+
+  next();
+});
+
+// Routes
+app.use("/toughts", toughtsRoutes);
+app.get("/", ToughtsController.showToughts);
 
 conn
   .sync()
