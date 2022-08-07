@@ -61,3 +61,60 @@ footer span {
   color: #f6982d;
   font-weight: bold;
 }
+
+.auth-container {
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-container h2 {
+  color: #fff;
+  border-left: 4px solid #f6982d;
+  margin-bottom: 1em;
+  width: 100%;
+  padding: 0.3em;
+}
+
+.auth-container a {
+  color: #f6982d;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.form-control label {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.form-control input,
+.form-control textarea {
+  border: 1px solid #f6982d;
+  border-radius: 4px;
+  padding: 0.9em;
+  width: 100%;
+}
+
+.btn {
+  background-color: tranparent;
+  color: #f6982d;
+  border: 2px solid #f6982d;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  margin-bottom: 1em;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #f6982d;
+  color: #fff;
+}
